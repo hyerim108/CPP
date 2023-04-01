@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 23:43:00 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/04/02 02:33:20 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/04/02 02:38:45 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,5 @@ class Fixed{
         int getRawBits(void) const;
         void setRawBits(int const raw);
 };
+
 #endif
