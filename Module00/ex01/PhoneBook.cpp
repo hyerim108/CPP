@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:46:07 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/03/25 17:05:22 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/04/03 15:56:52 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,17 @@ int search_book(contact contact[8])
     
     while (++c <= '8')
     {
-        if (contact[c - 1 - '0'].get_fname().size() && ++i)
-        {
-            i = 1;
-            std::cout << "|";
-            std::cout << std::setw(10) << c << "|";
-            str = fix_width(contact[c - 1 - '0'].get_fname(), 10);
-            std::cout << std::setw(10) << str << "|" ;
-            str = fix_width(contact[c - 1 - '0'].get_lname(), 10);
-            std::cout << std::setw(10) << str << "|" ;
-            str = fix_width(contact[c - 1 - '0'].get_nick(), 10);
-            std::cout << std::setw(10) << str << "|" ;
-            std::cout << std::endl;
-            std::cout << "+----------+----------+----------+----------+" << std::endl;
-        }
+        i = 1;
+        std::cout << "|";
+        std::cout << std::setw(10) << c << "|";
+        str = fix_width(contact[c - 1 - '0'].get_fname(), 10);
+        std::cout << std::setw(10) << str << "|" ;
+        str = fix_width(contact[c - 1 - '0'].get_lname(), 10);
+        std::cout << std::setw(10) << str << "|" ;
+        str = fix_width(contact[c - 1 - '0'].get_nick(), 10);
+        std::cout << std::setw(10) << str << "|" ;
+        std::cout << std::endl;
+        std::cout << "+----------+----------+----------+----------+" << std::endl;
     }
     return (i);   
 }
@@ -77,18 +74,19 @@ void phonebook::search(void)
     {
         std::cout << "Phonebook is empty!" << std::endl;
     }
+
     while (!std::cin.eof())
     {
         std::cout << "Select an index < range : 1 ~ 8 >  : ";
         if (std::getline(std::cin, str) && str != "")
         {
-            if (str.size() == 1 && str[0] >= '1' && str[0] <= '8' && \
-                contact[str[0] - 1 - '0'].get_fname().size())
+            if (str[0] >= '1' && str[0] <= '8')
+            {
+                print(contact[str[0] - 1 - '0']);
                 break;
+            }
         }
         if (str != "")
             std::cout << "Invalid Index!" << std::endl;
     }
-    if (!std::cin.eof())
-        print(contact[str[0] - 1 - '0']);
 }
