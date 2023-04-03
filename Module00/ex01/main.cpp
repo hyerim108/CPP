@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:02:33 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/03/25 16:04:55 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/04/03 15:39:50 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ int main(void)
             phone.add();
         else if (str == "SEARCH")
             phone.search();
-        // std::cout << std::endl;
+        else
+            std::cout << "another command, Example < ADD, SEARCH, EXIT >" << std::endl;
+        std::cout << std::endl;
     }
     return (0);
 }
