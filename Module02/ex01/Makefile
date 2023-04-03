@@ -6,7 +6,7 @@
 #    By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/01 23:42:24 by hyerimki          #+#    #+#              #
-#    Updated: 2023/04/01 23:45:20 by hyerimki         ###   ########.fr        #
+#    Updated: 2023/04/03 14:06:47 by hyerimki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = main.cpp Fixed.cpp
 OBJS = $(SRC:.cpp=.o)
-NAME = ex00
+NAME = ex01
 
 all : ${NAME}
 

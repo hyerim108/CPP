@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/02 02:38:16 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/04/02 03:08:56 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/04/03 14:06:35 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,17 @@
 
 Fixed::Fixed(void) : fix(0)
 {
-    std:;cout << "Default constructor called" << std::endl;
+    std::cout << "Default constructor called" << std::endl;
+}
+
+Fixed::Fixed(const int fix) : fix(fix << bits)
+{
+    std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float fix) : fix(roundf(fix * (1 << bits)))
+{
+    std::cout << "Float constructor called" << std::endl;
 }
 
 Fixed::Fixed(const Fixed &fixed)
@@ -44,4 +54,19 @@ int Fixed::getRawBits(void) const
 void Fixed::setRawBits(const int raw)
 {
     fix = raw;
+}
+
+int Fixed::toInt(void) const
+{
+    return (fix >> bits);
+}
+
+float Fixed::toFloat(void) const
+{
+    return ((float)(fix) / (1 << bits));
+}
+
+std::ostream &operator<<(std::ostream &o, const Fixed &fix)
+{
+    return (o << fix.toFloat());
 }
