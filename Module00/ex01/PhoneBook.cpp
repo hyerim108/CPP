@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 14:46:07 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/04/03 15:56:52 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/04/03 16:29:07 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,19 +74,21 @@ void phonebook::search(void)
     {
         std::cout << "Phonebook is empty!" << std::endl;
     }
-
-    while (!std::cin.eof())
+    int i = -1;
+    while (i != 0)
     {
-        std::cout << "Select an index < range : 1 ~ 8 >  : ";
+        std::cout << "Select an index < range : 1 ~ 8 >  or EXIT '0' : ";
         if (std::getline(std::cin, str) && str != "")
         {
-            if (str[0] >= '1' && str[0] <= '8')
+            if (str[0] >= '1' && str[0] <= '8' && str.size() == 1)
             {
                 print(contact[str[0] - 1 - '0']);
                 break;
             }
         }
-        if (str != "")
+        if (str == "0")
+            i = 0;
+        else if (str != "")
             std::cout << "Invalid Index!" << std::endl;
     }
 }
