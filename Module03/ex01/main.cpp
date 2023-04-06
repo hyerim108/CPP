@@ -6,22 +6,21 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 16:42:00 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/04/03 18:19:56 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/04/06 20:23:15 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-    ClapTrap a = ClapTrap("A");
-	ClapTrap b = ClapTrap("B");
+    ScavTrap apple = ScavTrap("apple");
+	ScavTrap banana = ScavTrap("banana");
 
-	a.attack("B");
-	b.takeDamage(5);
-	b.beRepaired(3);
-	b.attack("A");
-	a.takeDamage(10);
-	a.beRepaired(10);
+	apple.takeDamage(10);
+	apple.takeDamage(10);
+	apple.beRepaired(7);
+	apple.takeDamage(10);
+	apple.guardGate();
 	return (0);
 }

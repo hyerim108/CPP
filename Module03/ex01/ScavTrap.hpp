@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 20:07:01 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/04/03 20:20:07 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/04/06 15:47:15 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 #include <iostream>
 #include <string>
-
 #include "ClapTrap.hpp"
 
 class ScavTrap: public ClapTrap{
@@ -26,5 +25,9 @@ class ScavTrap: public ClapTrap{
         ScavTrap &operator=(const ScavTrap &scavtrap);
         ~ScavTrap(void);
         
+        void attack(const std::string &target);
+        void takeDamage(unsigned int amount);
+        void beRepaired(unsigned int amount);
+        void guardGate(void) const;
 };
 #endif
