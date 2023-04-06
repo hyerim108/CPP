@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 16:31:31 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/04/01 16:31:31 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/04/06 14:52:53 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ class HumanB
 {
     private:
         std::string name;
-        Weapon *weapon;
+        const Weapon *weapon;
     public:
         HumanB(std::string name);
         void attack(void);
-        void setWeapon(Weapon &weapon);
+        void setWeapon(const Weapon &weapon);
 };
 
 #endif

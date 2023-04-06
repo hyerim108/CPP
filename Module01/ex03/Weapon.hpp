@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/01 16:31:37 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/04/01 16:31:38 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/04/06 14:55:34 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Weapon
     public:
         Weapon(std::string type);
 
-        const std::string getType(void);
+        std::string getType(void) const;
         void setType(std::string type);
 };
 #endif
