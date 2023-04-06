@@ -6,12 +6,12 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 16:41:57 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/04/06 15:49:03 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/04/06 20:21:55 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_CPP
-#define CLAPTRAP_CPP
+#ifndef CLAPTRAP_HPP
+#define CLAPTRAP_HPP
 
 #include <iostream>
 #include <string>
