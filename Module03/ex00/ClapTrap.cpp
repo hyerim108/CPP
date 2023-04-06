@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/03 16:41:54 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/04/03 20:01:55 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/04/06 15:57:01 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void ClapTrap::takeDamage(unsigned int amount)
             this->hit = 0;
         std::cout << "ClapTrap <" << this->name << "> attacked " << amount << " hp" << std::endl;
         std::cout << "ClapTrap <" << this->name << "> have " << this->hit << " hp" << std::endl;
-        if (this->hit)
+        if (!this->hit)
             std::cout << "ClapTrap <" << this->name << "> died" << std::endl;
     }
 }

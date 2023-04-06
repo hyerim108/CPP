@@ -6,16 +6,16 @@
 #    By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/01 23:42:24 by hyerimki          #+#    #+#              #
-#    Updated: 2023/04/03 17:38:42 by hyerimki         ###   ########.fr        #
+#    Updated: 2023/04/06 15:53:31 by hyerimki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp ClapTrap.cpp
+SRC = Main.cpp ClapTrap.cpp
 OBJS = $(SRC:.cpp=.o)
-NAME = open
+NAME = ClapTrap
 
 all : ${NAME}
 
