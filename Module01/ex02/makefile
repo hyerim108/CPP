@@ -6,7 +6,7 @@
 #    By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/01 18:44:18 by hyerimki          #+#    #+#              #
-#    Updated: 2023/04/01 21:18:20 by hyerimki         ###   ########.fr        #
+#    Updated: 2023/04/07 16:17:51 by hyerimki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ ${NAME} : ${OBJS}
 	@echo "$(COLOR)$(NAME) created!✅"
 	
 %.o : %.cpp
-	@$(CC) $(CFAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 	
 clean :
 	@rm -rf $(OBJS)
