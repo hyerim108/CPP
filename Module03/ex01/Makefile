@@ -6,14 +6,14 @@
 #    By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/01 23:42:24 by hyerimki          #+#    #+#              #
-#    Updated: 2023/04/07 16:19:50 by hyerimki         ###   ########.fr        #
+#    Updated: 2023/04/09 07:27:34 by hyerimki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
+SRC = main.cpp ClapTrap.cpp ScavTrap.cpp
 OBJS = $(SRC:.cpp=.o)
 NAME = ScavTrap
 
