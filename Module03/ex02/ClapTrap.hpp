@@ -5,30 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/03 16:41:57 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/04/06 20:21:55 by hyerimki         ###   ########.fr       */
+/*   Created: 2023/04/09 04:57:54 by hyerimki          #+#    #+#             */
+/*   Updated: 2023/04/09 07:18:27 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 #define CLAPTRAP_HPP
 
-#include <iostream>
 #include <string>
+#include <iostream>
 
 class ClapTrap{
     protected:
         std::string name;
-        int hit;
-        int energy;
-        int attackDamage;
+        int hitPoint;
+        int EnergyPoint;
+        int AttackDamage;
     public:
         ClapTrap(void);
         ClapTrap(std::string name);
         ClapTrap(const ClapTrap &claptrap);
         ClapTrap &operator=(const ClapTrap &claptrap);
         ~ClapTrap(void);
-
+        
         void attack(const std::string &target);
         void takeDamage(unsigned int amount);
         void beRepaired(unsigned int amount);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/03 16:42:00 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/04/06 19:36:02 by hyerimki         ###   ########.fr       */
+/*   Created: 2023/04/09 04:57:56 by hyerimki          #+#    #+#             */
+/*   Updated: 2023/04/09 07:26:06 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int main(void)
 	apple.takeDamage(10);
 	apple.beRepaired(7);
 	apple.takeDamage(10);
-	apple.highFivesGuys();
+	// apple.highFivesGuys();
 	return (0);
 }

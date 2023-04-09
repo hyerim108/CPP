@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/06 18:13:10 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/04/06 19:41:54 by hyerimki         ###   ########.fr       */
+/*   Created: 2023/04/09 07:21:20 by hyerimki          #+#    #+#             */
+/*   Updated: 2023/04/09 14:00:22 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 #include "ClapTrap.hpp"
 
-class FragTrap : public ClapTrap {
+class FragTrap: public ClapTrap {
     public:
         FragTrap(void);
-        FragTrap(std::string name);
+        FragTrap(std::string name); 
         FragTrap(const FragTrap &fragtrap);
         FragTrap &operator=(const FragTrap &fragtrap);
         ~FragTrap(void);

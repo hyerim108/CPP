@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/03 20:07:01 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/04/06 15:47:15 by hyerimki         ###   ########.fr       */
+/*   Created: 2023/04/09 06:00:39 by hyerimki          #+#    #+#             */
+/*   Updated: 2023/04/09 13:51:18 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 #define SCAVTRAP_HPP
 
-#include <iostream>
 #include <string>
+#include <iostream>
 #include "ClapTrap.hpp"
 
 class ScavTrap: public ClapTrap{
@@ -30,4 +30,5 @@ class ScavTrap: public ClapTrap{
         void beRepaired(unsigned int amount);
         void guardGate(void) const;
 };
+
 #endif
