@@ -6,16 +6,16 @@
 #    By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/10 17:24:28 by hyerimki          #+#    #+#              #
-#    Updated: 2023/04/10 17:35:28 by hyerimki         ###   ########.fr        #
+#    Updated: 2023/04/12 19:07:25 by hyerimki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = 
+SRC = Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp main.cpp Brain.cpp
 OBJS = $(SRC:.cpp=.o)
-NAME = 
+NAME = Brain
 
 all : ${NAME}
 
