@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/10 17:37:29 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/04/10 18:11:35 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/04/12 15:54:33 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 Animal::Animal(void) : type("")
 {
     std::cout << "Animal created defalut constructor." << std::endl;
+    this->type = "Animal";
 }
 
 Animal::Animal(const Animal &animal)
@@ -25,9 +26,9 @@ Animal::Animal(const Animal &animal)
 Animal &Animal::operator=(const Animal &animal)
 {
     std::cout << "Assignment Operator for Animal call" << std::endl;
-    if (this != &claptrap)
+    if (this != &animal)
     {
-        this->type = claptrap.type;
+        this->type = animal.type;
     }
     return (*this);
 }
@@ -39,7 +40,7 @@ Animal::~Animal(void)
 
 void Animal::makeSound() const
 {
-    std::string << "no sound" << std::endl;
+    std::cout << "no sound" << std::endl;
 }
 
 const std::string& Animal::getType() const
