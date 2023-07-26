@@ -6,42 +6,35 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 13:15:46 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/24 15:00:38 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/07/26 17:28:18 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
-    std::cout << "----- Test Bureaucrat grade -----" << std::endl;
-	Bureaucrat p1("apple", 1);
-	Bureaucrat p2("banana", 150);
-	std::cout << std::endl;
-	std::cout << "p1 Before : " << p1;
-	p1.decrement();
-	std::cout << "p1 After : " << p1;
-	std::cout << "p2 Before : " << p2;
-	p2.increment();
-	std::cout << "p2 After : " << p2 << std::endl;
+	Intern people;
+	Bureaucrat b1("A", 146);
+	AForm* f1 = people.makeForm("shrubbery creation", "Form"); //145
+	people.makeForm("Wrong", "Not create");
 
-	std::cout << "----- Test Example -----" << std::endl;
-	try
-	{
-		Bureaucrat p3("grape", 0);
-	}
-	catch(std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	try
-	{
-		Bureaucrat p4("cherry", 151);
-	}
-	catch(std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	if (!f1)
+		return (1);
+	std::cout << b1 << std::endl;
+	std::cout << *f1 << std::endl;
+	b1.signForm(*f1); //146 > 145 -> 낮은 등급 no sign
+	b1.executeForm(*f1); //signed이 안되어있다는 표시!
 
+	b1.increment();
+	b1.increment(); //144
+
+	b1.signForm(*f1); //144 > 145 -> 높은등급 sign
+	std::cout << *f1 << std::endl;
+	b1.executeForm(*f1);
+	std::cout << "----------------------------------" << std::endl;
+	delete f1;
 	return (0);
 }

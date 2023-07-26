@@ -6,10 +6,11 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 13:15:43 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/26 14:23:12 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/07/26 14:22:49 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat(std::string const name, int grade) : name(name)
@@ -85,3 +86,17 @@ const char* Bureaucrat::GradeTooLowException::what() const throw()
 
 Bureaucrat::GradeTooHighException::~GradeTooHighException(void) throw(){}
 Bureaucrat::GradeTooLowException::~GradeTooLowException(void) throw() {}
+
+void Bureaucrat::signForm(Form &f)
+{
+    try
+    {
+        f.beSigned(*this);
+        std::cout << "<" << this->name << "> signed <" << f.getName() << ">" << std::endl;
+    }
+    catch(std::exception &e)
+    {
+        std::cout << "<" << this->name << "> couldn't sign <" << f.getName()
+			<< "> becase : " << e.what() << std::endl;
+    }
+}

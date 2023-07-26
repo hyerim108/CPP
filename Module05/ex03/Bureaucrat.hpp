@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 13:15:40 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/24 14:38:14 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/07/24 19:24:25 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <string>
 #include <iostream>
+
+class AForm;
 
 class Bureaucrat
 {
@@ -45,6 +47,9 @@ class Bureaucrat
                 const char* what() const throw();
                 ~GradeTooLowException(void) throw();
         };
+
+        void signForm(AForm &f);
+        void executeForm(AForm const & from);
 };
 
 std::ostream &operator<<(std::ostream &o, const Bureaucrat &bureaucrat);

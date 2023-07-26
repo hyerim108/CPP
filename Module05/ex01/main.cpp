@@ -6,42 +6,48 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 13:15:46 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/24 15:00:38 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/07/24 18:01:30 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
 int main(void)
 {
     std::cout << "----- Test Bureaucrat grade -----" << std::endl;
-	Bureaucrat p1("apple", 1);
-	Bureaucrat p2("banana", 150);
+	Form f1("Form 1", 20, 60);
+	Form f2("Form 2", 30 , 2);
+	
+	Bureaucrat b1("Bureaucrat 1", 15);
+	Bureaucrat b2("Bureaucrat 2", 36);
+
+	std::cout << f1 << std::endl;
+	std::cout << b1 << std::endl;
+	b1.signForm(f1);
+	
+	std::cout << f2 << std::endl;
+	std::cout << b2 << std::endl;
+	b2.signForm(f2);
+
 	std::cout << std::endl;
-	std::cout << "p1 Before : " << p1;
-	p1.decrement();
-	std::cout << "p1 After : " << p1;
-	std::cout << "p2 Before : " << p2;
-	p2.increment();
-	std::cout << "p2 After : " << p2 << std::endl;
-
-	std::cout << "----- Test Example -----" << std::endl;
+	std::cout << "----- Test Exception grade -----" << std::endl;
 	try
 	{
-		Bureaucrat p3("grape", 0);
+		Form f3("Form 3", 140, -1); // 생성시 요구하는 등급보다 높을때
 	}
-	catch(std::exception& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	try
-	{
-		Bureaucrat p4("cherry", 151);
-	}
-	catch(std::exception& e)
+	catch(std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
 
+	try
+	{
+		Form f4("Form 3", 250, 200); //생성시 요구하는 등급보다 낮을때
+	}
+	catch(std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return (0);
 }
