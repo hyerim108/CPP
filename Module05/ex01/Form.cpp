@@ -6,23 +6,23 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:09:21 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/26 14:23:03 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/07/26 17:45:12 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(std::string const name, int grade, int certain_grade) : name(name), grade(grade), certain_grade(certain_grade)
+Form::Form(std::string const name, int grade, int gradeEx) : name(name), grade(grade), gradeEx(gradeEx)
 {
     std::cout << "Form was construcred" << std::endl;
-    if (grade > 150 || certain_grade > 150) //등급이 150보다 낮을경우
+    if (grade > 150 || gradeEx > 150) //등급이 150보다 낮을경우
         throw GradeTooLowException();
-    else if(grade < 1 || certain_grade < 1)
+    else if(grade < 1 || gradeEx < 1)
         throw GradeTooHighException(); //등급이 1보다 높을경우
 }
 
-Form::Form(const Form &form) : name(form.name), grade(form.grade), certain_grade(form.certain_grade)
+Form::Form(const Form &form) : name(form.name), grade(form.grade), gradeEx(form.gradeEx)
 {
     std::cout << "Form copy was constructed" << std::endl;
     *this = form;
@@ -53,9 +53,9 @@ int Form::getGrade(void) const
     return this->grade;
 }
 
-int Form::getCertainGrade(void) const
+int Form::getGradeEx(void) const
 {
-    return this->certain_grade;
+    return this->gradeEx;
 }
 
 bool Form::getSign(void) const
@@ -75,7 +75,7 @@ std::ostream &operator<<(std::ostream &o, const Form &form)
 {
     o << "------------" << "Form : " << form.getName() << "------------"<< std::endl;
     o << "<Form Grade> : " << form.getGrade() << std::endl;
-    o << "<Form CretainGrade> : " << form.getCertainGrade() << std::endl;
+    o << "<Form CretainGrade> : " << form.getGradeEx() << std::endl;
     o << "<Form sign> : " << (form.getSign() ? "YES" : "NO") << std::endl;
     o << "------------------------------------" << std::endl;
     return o;

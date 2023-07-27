@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:09:13 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/24 16:53:05 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/07/26 17:45:15 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,17 @@ class Form{
         std::string const name;
         bool sign;
         int grade;
-        int certain_grade;
+        int gradeEx;
     public:
         Form(void);
-        Form(std::string const name, int grade, int certain_grade);
+        Form(std::string const name, int grade, int gradeEx);
         Form(const Form &form);
         Form &operator=(const Form &form);
         ~Form(void);
 
         std::string getName() const;
         int     getGrade() const;
-        int     getCertainGrade() const;
+        int     getGradeEx() const;
         bool    getSign() const;
         
         void    beSigned(const Bureaucrat &b);

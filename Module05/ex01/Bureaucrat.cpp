@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 13:15:43 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/26 14:22:49 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/07/26 17:46:55 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,6 @@ void Bureaucrat::signForm(Form &f)
     catch(std::exception &e)
     {
         std::cout << "<" << this->name << "> couldn't sign <" << f.getName()
-			<< "> becase : " << e.what() << std::endl;
+			<< "> becase " << e.what() << std::endl;
     }
 }
