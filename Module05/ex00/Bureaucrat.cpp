@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 13:15:43 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/26 14:23:12 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/07/26 17:39:23 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,14 +55,14 @@ int Bureaucrat::getGrade(void) const
 
 void Bureaucrat::increment()
 {
-    if (this->grade == 1)  //등급증가 1이하의 수가 들어올 경우 에러처리
+    if (this->grade <= 1)  //등급증가 1이하의 수가 들어올 경우 에러처리
         throw GradeTooHighException();
     this->grade--;
 }
 
 void Bureaucrat::decrement() 
 {
-    if (this->grade == 150) //등급감소 150이상의 수가 들어올 경우 에러처리
+    if (this->grade >= 150) //등급감소 150이상의 수가 들어올 경우 에러처리
         throw GradeTooLowException();
     this->grade++;
 }
