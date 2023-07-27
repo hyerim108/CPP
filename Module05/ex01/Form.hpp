@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:09:13 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/26 17:45:15 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/07/27 14:08:08 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ class Form{
     private:
         std::string const name;
         bool sign;
-        int grade;
-        int gradeEx;
+        int const grade;
+        int const gradeEx;
     public:
         Form(void);
         Form(std::string const name, int grade, int gradeEx);
