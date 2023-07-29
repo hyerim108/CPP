@@ -6,7 +6,7 @@
 #    By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/10 17:24:28 by hyerimki          #+#    #+#              #
-#    Updated: 2023/07/24 15:34:21 by hyerimki         ###   ########.fr        #
+#    Updated: 2023/07/29 12:57:12 by hyerimki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,6 +33,8 @@ fclean : clean
 	@rm -rf ${NAME}
 	@echo "$(COLOR)$(NAME) fclean!✅"
 
-re : fclean all
+re : 
+	make fclean 
+	make all
 
 .PHONY: all clean fclean re

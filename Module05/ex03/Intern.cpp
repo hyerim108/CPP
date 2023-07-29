@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 15:52:47 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/26 17:03:32 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/07/27 14:22:26 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ AForm* Intern::makeForm(std::string form, std::string target)
         i++;
     if (i < 3)
     {
-        std::cout << "create Intern Form : <" << form << ">" << std::endl;
+        std::cout << "Intern creates : <" << form << ">" << std::endl;
         return ((this->*p[i])(target));
     }
     std::cout << "Exception : formName <" << form << "> is failed" << std::endl;

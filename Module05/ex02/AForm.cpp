@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 15:09:21 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/27 14:10:52 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/07/29 11:58:45 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,6 @@ void AForm::checkExce(Bureaucrat const & executor) const
 {
     if (this->sign == false)
         throw FormNoSingedException();
-    if(executor.getGrade() > this->grade) //b의 등급이 충분히 높은지 확인 b가 더 높으면 낮은 등급
+    if(executor.getGrade() > this->gradeEx) //b의 등급이 충분히 높은지 확인 b가 더 높으면 낮은 등급
         throw GradeTooLowException();
 }

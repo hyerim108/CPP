@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 18:07:34 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/26 15:19:29 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/07/27 14:32:14 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <string>
 #include <iostream>
+#include <ctime>
+#include<cstdlib>
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"

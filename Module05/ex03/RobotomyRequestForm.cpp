@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 18:07:32 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/26 15:38:23 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/07/27 14:32:04 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void RobotomyRequestForm::execute(const Bureaucrat &excutor) const
     //드릴소리..?
     std::cout << "** Drill sound **" << std::endl;
     std::cout << "Drrrrrrrrrrrrrrrrrrr....!" << std::endl;
+    std::srand(std::time(NULL));
     if (rand() % 2)
     {
         std::cout << "<" <<  this->target << "> successfully robot" << std::endl;

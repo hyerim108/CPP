@@ -6,7 +6,7 @@
 #    By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/10 17:24:28 by hyerimki          #+#    #+#              #
-#    Updated: 2023/07/26 16:25:00 by hyerimki         ###   ########.fr        #
+#    Updated: 2023/07/29 12:57:22 by hyerimki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,8 @@ fclean : clean
 	@rm -rf ${NAME} *_shrubbery
 	@echo "$(COLOR)$(NAME) fclean!✅"
 
-re : fclean all
+re : 
+	make fclean 
+	make all
 
 .PHONY: all clean fclean re
