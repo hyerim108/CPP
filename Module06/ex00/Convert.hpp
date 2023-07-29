@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 15:58:56 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/29 16:41:47 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/07/29 17:03:12 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
+#include <cstring>
 
 #define MAX_INT 2147483647
 #define MIN_INT -2147483648

@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 15:58:58 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/29 16:47:01 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/07/29 17:08:21 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,19 @@ Convert::Convert(void)
 
 Convert::Convert(std::string in) : in(in)
 {
+    int len = in.length();
     if(ft_error() == 1)
         return ;
-    // ft_int();
-    // ft_char();
-    // ft_float();
-    // ft_double();
+    if (in[len - 1] != 'f' && strstr(in.c_str(), ".") == 0)
+        ft_int();
+    else if (len == 1)
+        ft_char();
+    else if(in[len - 1] == 'f')
+        ft_float();
+    else if(strstr(in.c_str(), ".") != 0)
+        ft_double();
+    else
+        std::cout << "Exception: Unknown input" << std::endl;
 }
 
 Convert::Convert(const Convert &convert) : in(convert.in)
@@ -91,7 +98,7 @@ void Convert::ft_double()
     else
         std::cout << "char: Non displayable" << std::endl;
     std::cout << "int: " << static_cast<int>(num) << std::endl;
-    std::cout << "float: " << static_cast<float>(num) << "f" << std::endl;
+    std::cout << "float: " << static_cast<float>(num) << ".0f" << std::endl;
     std::cout << "double: " << static_cast<double>(num) << std::endl;
 }
 
