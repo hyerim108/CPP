@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 15:58:58 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/31 15:25:25 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/08/02 16:44:26 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Convert::Convert(std::string in) : in(in)
         std::cout << "Exception: Unknown input" << std::endl;
         return ;
     }
-    if (len == 1)
+    if (len == 1 && ((this->in[0] <= 47) || (this->in[0] > 57 && this->in[0] <= 126)))
         ft_char();
     else if (in[len - 1] != 'f' && strstr(in.c_str(), ".") == 0)
         ft_int();
@@ -57,7 +57,7 @@ Convert::~Convert(void)
 
 void Convert::ft_char()
 {
-    if ((this->in[0] >= 32 && this->in[0] <= 47) || (this->in[0] >= 57 && this->in[0] <= 126))
+    if ((this->in[0] >= 32 && this->in[0] <= 47) || (this->in[0] > 57 && this->in[0] <= 126))
         std::cout << "char: '" << this->in << "'" << std::endl;
     else
         std::cout << "char: Non displayable" << std::endl;
