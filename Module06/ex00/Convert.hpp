@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 15:58:56 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/31 13:31:57 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/08/02 19:50:25 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 #include <string>
 #include <iostream>
 #include <cstdlib>
-#include <cstring>
+#include <cstring> //strstr
 #include <cctype>
-#include <cstdio>
-#include <cstdlib>
+#include <cstdio> //sscanf
+#include <cstdlib> //atoi
 
 #define MAX_INT 2147483647
 #define MIN_INT -2147483648
@@ -40,7 +40,7 @@ class Convert{
         void ft_float();
         void ft_double();
         int ft_error();
-
+        int science();
         bool check_input();
 };
 

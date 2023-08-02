@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 15:58:58 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/08/02 16:44:26 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/08/02 20:02:57 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ Convert::Convert(void)
 Convert::Convert(std::string in) : in(in)
 {
     int len = in.length();
+    if (science() == 1)
+        return ;
     if(ft_error() == 1)
     {
         std::cout << "Exception: Unknown input" << std::endl;
@@ -88,8 +90,17 @@ void Convert::ft_float()
         else
             std::cout << "char: Non displayable" << std::endl;
         std::cout << "int: " << static_cast<int>(num) << std::endl;
-        std::cout << "float: " << static_cast<float>(num) << ".0f" << std::endl;
-        std::cout << "double: " << static_cast<double>(num) << ".0" << std::endl;
+        int len = in.length();
+        if (this->in[len - 2] == '0')
+        {
+            std::cout << "float: " << static_cast<float>(num) << ".0f" << std::endl;
+            std::cout << "double: " << static_cast<double>(num) << ".0" << std::endl;
+        }
+        else
+        {
+            std::cout << "float: " << static_cast<float>(num) << "f" << std::endl;
+            std::cout << "double: " << static_cast<double>(num) << std::endl;
+        }
     }
     else  // 변환 실패 (잘못된 형식의 입력)
         std::cout << "Exception: Unknown input" << std::endl;
@@ -139,7 +150,38 @@ bool Convert::check_input()
     return false;
 }
 
+int findstring(const std::string &input)
+{
+    return input.find('.');
+}
 int Convert::ft_error()
+{
+    if(check_input() && strstr(in.c_str(), ".") == 0)
+        return (1);
+    int len = in.length();
+    if(this->in[len-1] =='f' && this->in[len-2] == '.')
+        return (1);
+    int location = findstring(this->in);
+    for(int i = location; i < len;i++)
+    {
+        if(isalpha(this->in[i]) && this->in[i] != 'f')
+            return (1);
+        else if(this->in[i] == 'f')
+        {
+            if (this->in[i+1] != '\0')
+                return (1);
+        }
+    }
+    long int num = std::atol(this->in.c_str());
+    if (num > 2147483647 || num < MIN_INT)
+    {
+        std::cout << "Exception : num overflow" << std::endl;
+        return (1);
+    }
+    return (0);
+}
+
+int Convert::science()
 {
     if (this->in == "nanf" || this->in == "+inff" || this->in == "-inff")
     {
@@ -155,14 +197,6 @@ int Convert::ft_error()
         std::cout << "int: impossible" << std::endl;
         std::cout << "float: " << std::endl;
         std::cout << "double: " << std::endl;
-        return (1);
-    }
-    else if(check_input() && strstr(in.c_str(), ".") == 0)
-        return (1);
-    long int num = std::atol(this->in.c_str());
-    if (num > 2147483647 || num < MIN_INT)
-    {
-        std::cout << "Exception : num overflow" << std::endl;
         return (1);
     }
     return (0);
