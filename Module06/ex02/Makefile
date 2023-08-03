@@ -6,13 +6,13 @@
 #    By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/27 15:58:29 by hyerimki          #+#    #+#              #
-#    Updated: 2023/07/31 17:49:33 by hyerimki         ###   ########.fr        #
+#    Updated: 2023/08/03 14:26:46 by hyerimki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC =  main.cpp Base.cpp A.cpp B.cpp C.cpp
+SRC =  main.cpp Base.cpp
 OBJS = $(SRC:.cpp=.o)
 NAME = Identify
 

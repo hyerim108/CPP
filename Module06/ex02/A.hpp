@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 17:19:07 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/31 17:41:49 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/08/03 14:29:01 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 #include "Base.hpp"
 
 class A : public Base{
-    public:
-        ~A();
 };
 
 #endif
