@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 15:58:58 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/08/02 20:02:57 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/08/03 13:21:39 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void Convert::ft_float()
             std::cout << "char: Non displayable" << std::endl;
         std::cout << "int: " << static_cast<int>(num) << std::endl;
         int len = in.length();
-        if (this->in[len - 2] == '0')
+        if (this->in[len -2] == '0' && this->in[len - 3] == '.')
         {
             std::cout << "float: " << static_cast<float>(num) << ".0f" << std::endl;
             std::cout << "double: " << static_cast<double>(num) << ".0" << std::endl;
@@ -117,7 +117,7 @@ void Convert::ft_double()
             std::cout << "char: Non displayable" << std::endl;
         std::cout << "int: " << static_cast<int>(num) << std::endl;
         int len = in.length();
-        if (this->in[len -1] == '0')
+        if (this->in[len -1] == '0' && this->in[len - 2] == '.')
         {
             std::cout << "float: " << static_cast<float>(num) << ".0f" << std::endl;
             std::cout << "double: " << static_cast<double>(num) << ".0" << std::endl;
