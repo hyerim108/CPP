@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 14:22:21 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/07/31 15:31:17 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/08/03 13:34:51 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,12 @@ Serializer::Serializer(void)
 Serializer::Serializer(const Serializer &s)
 {
     std::cout << "CoSerializernvert copy was constructed" << std::endl;
-    *this =  s;
+    *this = s;
 }
 
 Serializer &Serializer::operator=(const Serializer &s) 
 {
     std::cout << "Assignment Operator for Convert call" << std::endl;
-    (void) s;
     if (this == &s)
         return (*this);
     return (*this);
