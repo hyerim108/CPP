@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:09:34 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/08/04 19:40:57 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/08/04 19:44:35 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 
+template <typename T>
 class Array{
     private:
         T *array;
