@@ -6,7 +6,7 @@
 #    By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/27 15:58:29 by hyerimki          #+#    #+#              #
-#    Updated: 2023/08/03 17:48:33 by hyerimki         ###   ########.fr        #
+#    Updated: 2023/08/04 19:11:03 by hyerimki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC =  main.cpp
 OBJS = $(SRC:.cpp=.o)
-NAME = convert
+NAME =  template
 
 all : ${NAME}
 
