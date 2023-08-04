@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 17:58:40 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/08/04 16:00:15 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/08/04 19:10:46 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,6 @@ int main(void)
 	std::cout<< std::endl << std::endl << "iter float result" << std::endl;
 	::iter<float>(floatArray, 3, ::print);
 	std::cout << std::endl;
+
+    return (0);
 }
