@@ -6,18 +6,57 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:37:05 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/08/04 19:40:43 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/08/09 15:59:41 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Array.hpp"
 
 template <typename T>
-Array::Array() : array(NULL), size(0){};
+Array<T>::Array() : array(NULL), size_n(0){};
 
 template <typename T>
-Array::Array(unsigned int n) : array(new T[n]), size(n) {};
+Array<T>::Array(unsigned int n) : array(new T[n]), size_n(n) {};
 
-Array::~Array(){
-    
+template <typename T>
+Array<T>::Array(const Array<T> &array) : array(new T[array.size_n]), size_n(array.size_n)
+{
+    if (this == &array)
+        return *this;
+    for(unsigned int i=0;i<array.size_n;i++)
+        this->array[i] = array.array[i];
+    *this = array;
+}
+
+template <typename T>
+Array<T> &Array<T>::operator=(const Array<T> &array) 
+{
+    std::cout << "Assignment Operator for Array call" << std::endl;
+    if (this != &array)
+    {
+        delete[] (this->array);
+        this->size_n = array.size_n;
+        this->array = new T[this->size_n];
+        for(unsigned int i=0;i<array.size_n;i++)
+        this->array[i] = array.array[i];
+    }
+    return (*this);
+}
+
+template <typename T>
+Array<T>::~Array(){
+    delete[] (this->array);
+};
+
+template <typename T>
+T &Array<T>::operator[](const unsigned int n)
+{
+    if (n < 0 || n >= this->size_n)
+        throw std::exception();
+    return this->array[n];
+}
+
+template <typename T>
+unsigned int Array<T>::size(void){
+    return (this->size_n);  
 };
