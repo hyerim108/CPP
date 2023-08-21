@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 15:58:58 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/08/03 13:21:39 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/08/21 14:50:32 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,20 +183,24 @@ int Convert::ft_error()
 
 int Convert::science()
 {
-    if (this->in == "nanf" || this->in == "+inff" || this->in == "-inff")
+   if (this->in == "nanf" || this->in == "+inff" || this->in == "-inff")
     {
         std::cout << "char: impossible" << std::endl;
         std::cout << "int: impossible" << std::endl;
-        std::cout << "float: " << std::endl;
-        std::cout << "double: " << std::endl;
+        std::cout << "float: " << this->in << std::endl;
+        if (this->in == "nanf")
+            this->in = this->in.substr(0,3);
+        else
+            this->in = this->in.substr(0,4);
+        std::cout << "double: " << this->in << std::endl;
         return (1);
     }
     else if (this->in == "nan" || this->in == "+inf" || this->in == "-inf")
     {
         std::cout << "char: impossible" << std::endl;
         std::cout << "int: impossible" << std::endl;
-        std::cout << "float: " << std::endl;
-        std::cout << "double: " << std::endl;
+        std::cout << "float: " << this->in << "f" << std::endl;
+        std::cout << "double: " << this->in << std::endl;
         return (1);
     }
     return (0);
