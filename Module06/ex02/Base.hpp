@@ -16,6 +16,7 @@
 #include <string>
 #include <iostream>
 #include <cstdlib> //srand
+#include <ctime>
 
 class Base{
     public:
