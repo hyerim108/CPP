@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:37:05 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/08/09 15:59:41 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/08/23 17:24:11 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ Array<T>::Array(unsigned int n) : array(new T[n]), size_n(n) {};
 template <typename T>
 Array<T>::Array(const Array<T> &array) : array(new T[array.size_n]), size_n(array.size_n)
 {
-    if (this == &array)
-        return *this;
     for(unsigned int i=0;i<array.size_n;i++)
         this->array[i] = array.array[i];
     *this = array;
@@ -31,14 +29,13 @@ Array<T>::Array(const Array<T> &array) : array(new T[array.size_n]), size_n(arra
 template <typename T>
 Array<T> &Array<T>::operator=(const Array<T> &array) 
 {
-    std::cout << "Assignment Operator for Array call" << std::endl;
     if (this != &array)
     {
         delete[] (this->array);
         this->size_n = array.size_n;
         this->array = new T[this->size_n];
         for(unsigned int i=0;i<array.size_n;i++)
-        this->array[i] = array.array[i];
+            this->array[i] = array.array[i];
     }
     return (*this);
 }
