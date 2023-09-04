@@ -6,7 +6,7 @@
 + [CPP02](https://github.com/hyerim108/CPP/tree/master/Module02)
   + Ad-hoc polymorphism, operator overloading and Orthodox Canonical class form
 + [CPP03](https://github.com/hyerim108/CPP/tree/master/Module03)
-    +Inheritance
+  + Inheritance
 + [CPP04](https://github.com/hyerim108/CPP/tree/master/Module04)
   + polymorphism, abstract classes
 ------------
