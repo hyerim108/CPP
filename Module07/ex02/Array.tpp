@@ -46,7 +46,7 @@ Array<T>::~Array(){
 };
 
 template <typename T>
-T &Array<T>::operator[](const unsigned int n)
+T &Array<T>::operator[](const unsigned int n) const
 {
     if (n < 0 || n >= this->size_n)
         throw std::exception();
@@ -54,6 +54,6 @@ T &Array<T>::operator[](const unsigned int n)
 }
 
 template <typename T>
-unsigned int Array<T>::size(void){
+unsigned int Array<T>::size(void) const{
     return (this->size_n);  
 };

@@ -28,8 +28,8 @@ class Array{
         ~Array();
         
         Array &operator=(const Array &array);
-        T &operator[](const unsigned int n);
-        unsigned int size(void);
+        T &operator[](const unsigned int n) const;
+        unsigned int size(void) const;
 };
 
 template <typename T>
