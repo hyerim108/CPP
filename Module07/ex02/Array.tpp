@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:37:05 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/08/23 17:24:11 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/09/22 18:46:06 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ Array<T>::Array(const Array<T> &array) : array(new T[array.size_n]), size_n(arra
 {
     for(unsigned int i=0;i<array.size_n;i++)
         this->array[i] = array.array[i];
-    *this = array;
 }
 
 template <typename T>
