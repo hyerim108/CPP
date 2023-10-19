@@ -6,13 +6,13 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:40:30 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/13 15:41:23 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/19 13:50:11 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span(void) {}
+Span::Span(void) {} //디폴트
 
 Span::Span(unsigned int N) : N(N)
 {

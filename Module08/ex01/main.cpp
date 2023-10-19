@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:40:34 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/13 15:41:16 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/19 13:49:13 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,12 @@ int main(void)
     {
         std::cerr << e.what() << '\n';
     }
+
+    Span v2(10000);
+
+	for(int i = 0; i < 10000; i++)
+		v2.addNumber(i);
+
+	std::cout << v2.shortestSpan() << std::endl;
+	std::cout << v2.longestSpan() << std::endl;
 }

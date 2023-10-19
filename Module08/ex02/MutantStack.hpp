@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:23:49 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/16 16:06:33 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/19 14:27:00 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 # define MUTANTSTACK_HPP
 
 #include <stack>
+#include <list>
 #include <iostream>
 
 template <typename T>
 class MutantStack : public std::stack<T>{
     public:
         MutantStack() : std::stack<T>(){};
+        MutantStack(const MutantStack &copy) : std::stack<T>(copy){};
+        MutantStack(const std::stack<T> &copy) : std::stack<T>(copy){};
         virtual ~MutantStack(){};
 
         MutantStack &operator=(const MutantStack &ms)
