@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:40:36 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/13 15:33:00 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/19 19:36:03 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Span{
         Span &operator=(const Span &span); //대입연산자
 
         void addNumber(int num);
+        void addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
         int shortestSpan(); //최단범위
         int longestSpan(); //최장범위
 };

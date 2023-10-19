@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:40:30 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/19 13:50:11 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/19 19:56:53 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,13 @@ void Span::addNumber(int num) //벡터에 숫자 추가해주는 메소드
     if (v.size() >= N)
         throw std::out_of_range("Error : vector is already full");
     v.push_back(num);
+}
+
+void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+    if(v.size() >= N || std::distance(begin, end) > (long)N - (long)v.size())
+        throw std::out_of_range("Error : vector is already full");
+    v.insert(v.end(), begin, end);
 }
 
 int Span::shortestSpan(){

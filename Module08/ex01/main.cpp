@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 13:40:34 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/19 13:49:13 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/19 20:10:22 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,21 @@ int main(void)
 
 	std::cout << v2.shortestSpan() << std::endl;
 	std::cout << v2.longestSpan() << std::endl;
+
+    std::vector<int> numbers;
+    numbers.push_back(1);
+    numbers.push_back(2);
+    numbers.push_back(3);
+    numbers.push_back(4);
+    
+    Span span(10);
+    span.addNumber(numbers.begin(), numbers.end());
+    
+    int oldSize = numbers.size();
+    numbers.push_back(5);
+    numbers.push_back(6);
+    span.addNumber(numbers.begin() + oldSize, numbers.end());
+
+    std::cout << span.shortestSpan() << std::endl;
+    std::cout << span.longestSpan() << std::endl;
 }
