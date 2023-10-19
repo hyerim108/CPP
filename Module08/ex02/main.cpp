@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 15:23:51 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/19 14:27:16 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/19 19:28:08 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ void first()
     MutantStack<int> mstack;
     mstack.push(5);
     mstack.push(17);
-    // std::cout << mstack.top() << std::endl;
-    // mstack.pop();
-    // std::cout << mstack.size() << std::endl;
+    std::cout << mstack.top() << std::endl;
+    mstack.pop();
+    std::cout << mstack.size() << std::endl;
     mstack.push(3);
     mstack.push(5);
     mstack.push(737);
@@ -41,9 +41,9 @@ void second(){
     std::list<int> asList;
 	asList.push_back(5);
 	asList.push_back(17);
-	// std::cout << asList.back() << std::endl;
-	// asList.pop_back();
-	// std::cout << asList.size() << std::endl;
+	std::cout << asList.back() << std::endl;
+	asList.pop_back();
+	std::cout << asList.size() << std::endl;
 	asList.push_back(3);
 	asList.push_back(5);
 	asList.push_back(737);
