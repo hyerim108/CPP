@@ -6,11 +6,27 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:27:36 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/27 12:33:56 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/27 13:58:34 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
+
+BitcoinExchange::BitcoinExchange(void){}
+
+
+BitcoinExchange::BitcoinExchange(const BitcoinExchange &b)
+{
+    *this = b;
+}
+
+BitcoinExchange &BitcoinExchange::operator=(const BitcoinExchange &b) 
+{
+    (void)b;
+    return (*this);
+}
+
+BitcoinExchange::~BitcoinExchange(void) {}
 
 std::map<std::string, float> BitcoinExchange::save_data(std::string data){
     //주어진 파일명을 사용하여 데이터를 읽고 map에 저장하여 반환
