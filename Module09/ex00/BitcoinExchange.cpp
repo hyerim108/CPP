@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:27:36 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/26 17:54:27 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/27 12:33:56 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,10 +78,24 @@ int BitcoinExchange::find_data(std::string file, std::map<std::string, float> ma
     while(getline(inputfile, line)) //file의 모든 줄을 순회한다.
     {
         if (!is_valid_input(line)) // 유효한 입력이 아닐때
-            std::cout << "Error: bad input =>" << std::endl;
+            std::cout << "Error: bad input => " << line << std::endl;
         
         else if (!is_valid_data(std::stoi(line.substr(0,4)), stoi(line.substr(5,2)), stoi(line.substr(8,2))))
-            std::cout<< "Error: invalid data => " << std::endl;
+            std::cout<< "Error: invalid data => " << line <<  std::endl;
+        else{
+            std::string date = line.substr(0, line.find(" | "));
+            std::string value = line.substr(line.find(" | ") + 3, line.find("\n"));
+            if (value.c_str()[0] == '-') //값이 음수일시
+                std::cout << "Error: not a positive number." << std::endl;
+            else if((unsigned int)std::atoi(value.c_str()) > 1000)
+                std::cout << "Error: too large a number." << std::endl;
+            else{
+                std::map<std::string,float>::iterator it;
+                it = map.upper_bound(date);
+                if (it != map.begin()) it--;
+                std::cout << date << " => " << value << " = " << (it->second * atof(value.c_str())) << std::endl;
+            }
+        }
     }
     return (0);
 }
