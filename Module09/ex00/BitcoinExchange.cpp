@@ -31,7 +31,7 @@ BitcoinExchange::~BitcoinExchange(void) {}
 std::map<std::string, float> BitcoinExchange::save_data(std::string data){
     //주어진 파일명을 사용하여 데이터를 읽고 map에 저장하여 반환
     std::map<std::string, float> map;
-    std::ifstream inputdata(data);
+    std::ifstream inputdata(data.c_str());
     std::string line;
     
     getline(inputdata, line); //첫줄은 헤드로 한번 지나가줌
@@ -82,7 +82,7 @@ bool is_valid_data(int y, int m, int d)
 
 int BitcoinExchange::find_data(std::string file, std::map<std::string, float> map){
     (void)map;
-    std::ifstream inputfile(file); // 파일을 열고 파일스트림객체생성
+    std::ifstream inputfile(file.c_str()); // 파일을 열고 파일스트림객체생성
     std::string line; // 한줄씩저장할 문자열
     
     if (!inputfile.is_open())
