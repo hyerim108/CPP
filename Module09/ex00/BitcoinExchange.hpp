@@ -16,6 +16,7 @@
 #include <iostream>
 #include <fstream>
 #include <map>
+#include <cstdlib> 
 
 class BitcoinExchange{
     public:
