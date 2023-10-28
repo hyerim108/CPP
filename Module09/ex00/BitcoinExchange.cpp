@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:27:36 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/27 13:58:34 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/28 17:47:52 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,14 +96,14 @@ int BitcoinExchange::find_data(std::string file, std::map<std::string, float> ma
         if (!is_valid_input(line)) // 유효한 입력이 아닐때
             std::cout << "Error: bad input => " << line << std::endl;
         
-        else if (!is_valid_data(std::stoi(line.substr(0,4)), std::stoi(line.substr(5,2)), std::stoi(line.substr(8,2))))
-            std::cout<< "Error: invalid data => " << line <<  std::endl;ㅊ
+        else if (!is_valid_data(stoi(line.substr(0,4)), stoi(line.substr(5,2)), stoi(line.substr(8,2))))
+            std::cout<< "Error: invalid data => " << line <<  std::endl;
         else{
             std::string date = line.substr(0, line.find(" | "));
             std::string value = line.substr(line.find(" | ") + 3, line.find("\n"));
             if (value.c_str()[0] == '-') //값이 음수일시
                 std::cout << "Error: not a positive number." << std::endl;
-            else if((unsigned int)ㅡ맏atoi(value.c_str()) > 1000)
+            else if((unsigned int)atoi(value.c_str()) > 1000)
                 std::cout << "Error: too large a number." << std::endl;
             else{
                 std::map<std::string,float>::iterator it;
