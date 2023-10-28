@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:27:36 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/28 17:47:52 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/28 17:54:32 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int BitcoinExchange::find_data(std::string file, std::map<std::string, float> ma
         if (!is_valid_input(line)) // 유효한 입력이 아닐때
             std::cout << "Error: bad input => " << line << std::endl;
         
-        else if (!is_valid_data(stoi(line.substr(0,4)), stoi(line.substr(5,2)), stoi(line.substr(8,2))))
+        else if (!is_valid_data(atoi(line.substr(0,4).c_str()), atoi(line.substr(5,2).c_str()), atoi(line.substr(8,2).c_str())))
             std::cout<< "Error: invalid data => " << line <<  std::endl;
         else{
             std::string date = line.substr(0, line.find(" | "));

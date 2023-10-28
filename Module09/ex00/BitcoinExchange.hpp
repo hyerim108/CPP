@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:27:34 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/27 13:51:47 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/28 17:53:54 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include <fstream>
 #include <map>
 #include <cstdlib> 
+#include <string>
 
 class BitcoinExchange{
     public:
