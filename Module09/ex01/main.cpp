@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 15:11:39 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/27 15:47:44 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/30 12:59:16 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int main(int ac, char **av)
     }
     catch(const std::invalid_argument& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cout << e.what() << '\n';
         return (1);
     }
     return 0;
