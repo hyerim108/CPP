@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 13:46:29 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/27 15:55:36 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/30 15:35:00 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void RPN::formRPN(std::string input)
         else if (isOperater(input.at(i)) && stack.size() > 1)
         {
             //입력문자가 연산자일경우, 최상위 두개의 숫자를 꺼내 연산
-            int a = stack.top();
+            int a = stack.top(); //꺼내기
             stack.pop();
             int b = stack.top();
             stack.pop();
