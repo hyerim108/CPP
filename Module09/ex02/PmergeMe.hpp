@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:17:15 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/28 17:34:51 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/30 12:53:11 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,17 @@
 #include <vector>
 #include <ctime>
 #include <iomanip>
+#include <list>
 
 class PmergeMe{
     private:
         std::vector<int> v;
         std::vector<std::pair<int, int> > vp;
 	    std::vector<int> vs;
+        
+        std::list<int> list;
+        std::list<std::pair<int, int> > lp;
+        std::list<int> ls;
         
     public:
         PmergeMe(void);
@@ -33,6 +38,7 @@ class PmergeMe{
 
         PmergeMe(char **av);
         double vectorPmergeMe();
+        double listPmergeMe();
         void pritArray();
 };
 #endif
