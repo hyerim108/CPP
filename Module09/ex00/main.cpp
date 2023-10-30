@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:27:31 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/27 13:57:05 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/30 14:43:35 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ int main(int ac, char **av)
 {
     std::map<std::string, float> map;
     
-    (void)av;
-    if (ac < 2 || ac > 2)
+    if (ac != 2)
     {
         std::cout << "Argument Error : [./btc] [txt file name] " << std::endl;
         return (1);

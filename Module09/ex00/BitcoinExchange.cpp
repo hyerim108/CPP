@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/26 16:27:36 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/28 17:54:32 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/30 14:52:50 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ bool is_valid_input(std::string input)
     for(int i=0;i<10;i++)
     {
         if ((i== 4 || i == 7) && input[i] != '-'){
-            std::cout << input[i] << std::endl;
             return false;
         }
         else if (input[i] != '-' && isdigit(input[i]) == 0) return false;
