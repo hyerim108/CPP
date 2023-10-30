@@ -6,7 +6,7 @@
 /*   By: hyerimki <hyerimki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 16:17:10 by hyerimki          #+#    #+#             */
-/*   Updated: 2023/10/30 16:02:27 by hyerimki         ###   ########.fr       */
+/*   Updated: 2023/10/30 16:34:02 by hyerimki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,17 +138,23 @@ double PmergeMe::listPmergeMe()
             std::swap((*it).first, (*it).second);
     }
     
-    for(std::list<std::pair<int, int> >::iterator it = std::next(lp.begin()); it != lp.end(); it++)
+    for(std::list<std::pair<int, int> >::iterator it = lp.begin(); it != lp.end(); it++)
     {
-        std::list<std::pair<int, int> >::iterator point = it;
-        std::list<std::pair<int, int> >::iterator prev = std::prev(it);
-        while ((*point).first < (*prev).first)
+        std::list<std::pair<int, int> >::iterator next = it;
+        ++next;
+        if(next != lp.end())
         {
-            std::swap(*point, *prev);
-            if(prev != lp.begin())
+            std::list<std::pair<int, int> >::iterator point = next;
+            std::list<std::pair<int, int> >::iterator prev = it;
+            while ((*point).first < (*prev).first && point != lp.begin())
             {
-                point = prev;
-                prev = std::prev(point);
+                std::swap(*point, *prev);
+                --point;
+                if(point != lp.begin())
+                {
+                    prev = point;
+                    --prev;
+                }
             }
         }
     }
