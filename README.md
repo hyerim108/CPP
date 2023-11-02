@@ -12,3 +12,4 @@
 ------------
 CPP 공부 Notion 기록  
 https://www.notion.so/CPP-4b9f3436291147bf8ba0b35a47e2319d?pvs=4
+https://www.notion.so/CPP-7290a5535fc64df5a5073857987a7d9b?pvs=4
