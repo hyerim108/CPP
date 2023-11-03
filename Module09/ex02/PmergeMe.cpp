@@ -55,29 +55,51 @@ PmergeMe::PmergeMe(char **av)
     std::cout << std::endl;
 }
 
-double PmergeMe::vectorPmergeMe()
-{
+int Jacobsthal(int n) {
+    if (n == 0) return 0;
+    if (n == 1) return 1;
+
+    return Jacobsthal(n - 1) * 2 + Jacobsthal(n - 2);
+}
+
+// 삽입 정렬 함수
+void InsertionSort(std::vector<int>& arr) {
+    for (size_t i = 1; i < arr.size(); i++) {
+    int key = arr[i];
+    int j = i - 1;
+
+        while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+}
+
+// Ford-Johnson 알고리즘
+double PmergeMe::vectorPmergeMe() {
     clock_t start = clock();
-    //벡터 사이즈만큼 나누어주기
-    for(size_t i = 0;i < v.size();i++)
-    {
+
+    // 벡터 사이즈만큼 나누어주기
+    for (size_t i = 0; i < v.size(); i++) {
         if (i == 0 && v.size() % 2)
-            vp.push_back(std::make_pair(-1,v[i]));
-        else
-        {
-            vp.push_back(std::make_pair(v[i], v[i+1]));
+            vp.push_back(std::make_pair(-1, v[i]));
+        else {
+            vp.push_back(std::make_pair(v[i], v[i + 1]));
             i++;
         }
     }
-   
-    // 두쌍중 작은순으로 바꾸기
-    for(std::vector<std::pair<int, int> >::iterator it = vp.begin(); it!= vp.end();++it)
-    {
+
+    // 두 쌍 중 작은 순으로 바꾸기
+    for (std::vector<std::pair<int, int> >::iterator it = vp.begin(); it != vp.end(); ++it) {
         if ((*it).first > (*it).second)
             std::swap((*it).first, (*it).second);
     }
-    
-    //첫번째 요소를 기준으로 정렬
+
+    // std::vector<std::pair<int, int> > pairs(vp.begin(), vp.end());
+    // std::sort(pairs.begin(), pairs.end());
+
+     //첫번째 요소를 기준으로 정렬
     for(std::vector<std::pair<int, int> >::iterator it = vp.begin() + 1; it != vp.end(); ++it)
     {
         std::vector<std::pair<int, int> >::iterator point = it;
@@ -93,20 +115,17 @@ double PmergeMe::vectorPmergeMe()
         }
     }
 
-    //첫번째 요소를 새로운 정렬된 벡터에 추가!
-    for(std::vector<std::pair<int, int> >::iterator it = vp.begin(); it != vp.end(); ++it)
-    {
-        if((*it).first != -1)
-            vs.push_back((*it).first);
-    }
-  
-    //두번째 요소를 새로운 정렬된 벡터에 추가!
-    for(std::vector<std::pair<int, int> >::iterator it = vp.begin(); it != vp.end(); ++it)
-    {
-        std::vector<int>::iterator sort;
-
-        sort = std::lower_bound(vs.begin(), vs.end(), (*it).second);
-        vs.insert(sort, (*it).second);
+    // 병합 과정 (수정)
+    int n = vp.size();
+    for (int i = 0; i < n; i++) {
+        size_t idx = Jacobsthal(i + 1) - 1; // Jacobsthal 수열을 사용
+        if (idx < vp.size() && vp[idx].first != -1) {
+            vs.push_back(vp[idx].first);
+            vp[idx].first = vp[idx].second;
+            vp[idx].second = -1;
+        }
+        
+        InsertionSort(vs); // 삽입 정렬을 사용
     }
 
     clock_t end = clock();
@@ -183,7 +202,8 @@ void PmergeMe::pritArray()
         for(std::vector<int>::iterator it = vs.begin(); it != vs.end(); ++it)
             std::cout << " " << *it;
         std::cout << std::endl;
-    }else if (ls.size() == list.size())
+    }
+    else if (ls.size() == list.size())
     {
         std::cout << "After: ";
         for(std::list<int>::iterator it = ls.begin(); it != ls.end(); it++)
