@@ -24,11 +24,11 @@ int main(int ac, char **av)
         PmergeMe merge(av);
 
         double timeVector = merge.vectorPmergeMe();
-        double timeList = merge.listPmergeMe();
+        // double timeList = merge.listPmergeMe();
         
         merge.pritArray();
         std::cout << "Time to process a range of " << ac - 1 << " elements with std::vector => " << std::fixed << std::setprecision(6) << timeVector << " us" << std::endl;
-        std::cout << "Time to process a range of " << ac - 1 << " elements with std::list => " << std::fixed << std::setprecision(6) << timeList << " us" << std::endl;
+        // std::cout << "Time to process a range of " << ac - 1 << " elements with std::list => " << std::fixed << std::setprecision(6) << timeList << " us" << std::endl;
     }catch(const std::invalid_argument& e)
     {
         std::cout << e.what() << '\n';
