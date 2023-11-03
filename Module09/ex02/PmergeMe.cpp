@@ -56,24 +56,13 @@ PmergeMe::PmergeMe(char **av)
 }
 
 int Jacobsthal(int n) {
+    static std::vector<int> cache(n + 1, -1);
+    
     if (n == 0) return 0;
     if (n == 1) return 1;
+    if (cache[n] != -1) return cache[n];
 
-    return Jacobsthal(n - 1) * 2 + Jacobsthal(n - 2);
-}
-
-// 삽입 정렬 함수
-void InsertionSort(std::vector<int>& arr) {
-    for (size_t i = 1; i < arr.size(); i++) {
-    int key = arr[i];
-    int j = i - 1;
-
-        while (j >= 0 && arr[j] > key) {
-            arr[j + 1] = arr[j];
-            j--;
-        }
-        arr[j + 1] = key;
-    }
+    return cache[n] = Jacobsthal(n - 1) * 2 + Jacobsthal(n - 2);
 }
 
 // Ford-Johnson 알고리즘
@@ -116,18 +105,20 @@ double PmergeMe::vectorPmergeMe() {
     }
 
     // 병합 과정 (수정)
+    
     int n = vp.size();
     for (int i = 0; i < n; i++) {
         size_t idx = Jacobsthal(i + 1) - 1; // Jacobsthal 수열을 사용
+
         if (idx < vp.size() && vp[idx].first != -1) {
             vs.push_back(vp[idx].first);
-            vp[idx].first = vp[idx].second;
+            vp[idx].first = -1;
+        }
+        if (idx < vp.size() && vp[idx].second != -1) {
+            vs.push_back(vp[idx].second);
             vp[idx].second = -1;
         }
-        
-        InsertionSort(vs); // 삽입 정렬을 사용
     }
-
     clock_t end = clock();
     return ((double)(end - start) / CLOCKS_PER_SEC);
 }
@@ -199,8 +190,8 @@ void PmergeMe::pritArray()
     if (vs.size() == v.size())
     {
         std::cout << "After: ";
-        for(std::vector<int>::iterator it = vs.begin(); it != vs.end(); ++it)
-            std::cout << " " << *it;
+        for (size_t i = 0; i < vs.size(); i++)
+            std::cout << vs[i] << " ";
         std::cout << std::endl;
     }
     else if (ls.size() == list.size())

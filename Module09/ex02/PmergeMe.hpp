@@ -19,6 +19,7 @@
 #include <ctime>
 #include <iomanip>
 #include <list>
+#include <algorithm>
 
 class PmergeMe{
     private:
